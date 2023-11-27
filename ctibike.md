@@ -1,0 +1,23 @@
+# Data Cleaning Process Overview:
+A total of nine datasets were acquired from the official Citi Bike system data repository at https://citibikenyc.com/system-data. The focus of the data retrieval encompassed the summer months (June to August) in New York City over a three-year period (2021-2023). The datasets from each respective year were consolidated through concatenation.
+
+To enhance data clarity and utility, the 'started_at' column underwent transformation, splitting it into two distinct columns, 'started_date' and 'started_time.' This involved converting the column to string data type for appropriate handling. Redundant columns, including 'start_station_id,' 'end_station_id,' and 'started_at,' were subsequently removed to streamline the dataset.
+
+A meticulous review of each transformed dataframe was conducted to identify and address any missing values. Rows where 'start_station_name' was missing were excluded from the analysis. Additionally, column names were carefully inspected, adjusted and reordered as necessary to improve the overall coherence of the data.
+
+The finalized datasets for the years 2021, 2022, and 2023 were individually exported as CSV files, resulting in three separate files. Furthermore, a consolidated mega-dataframe was created by concatenating these datasets, providing comprehensive station and customer information in a single repository. This amalgamated dataset was exported as 'all_bike_concat.csv.'
+
+# Analysis
+## Customer Trends:
+In 2021, members made up nearly 55% of all Citibike customers, a figure that increased to approximately 61% by the summer of 2022. The trend continued in 2023, with a further 9% increase in the total number of Citibike members, potentially influenced by the easing of COVID-19 restrictions. The 'Member type vs. bike type in the summer of 2021-2023 (excluding docked_bike)' bar graph indicates a clear preference for classic bikes over electric bikes among both members and casual riders. Fridays and Saturdays emerged as the most popular weekdays for bike rides in 2021 and 2022, according to the 'Popular weekdays for a bike ride (2021-2023)' line graphs. Notably, the 2023 line graph suggests a recent shift in customer preferences towards Thursdays. Additionally, the 'Most popular hours for a bike ride in the summer of 2021-2023' line chart highlights the most favored hours, approximately from 4 pm to 7 pm.
+
+## Station Trends:
+The most frequently chosen starting stations align with the most frequently chosen ending stations, including Grove St Path, South Waterfront Walkway - Sinatra Dr & 1 st, Hoboken Terminal - Hudson & Hudson Pl, Hoboken Terminal - River St & Hudson Pl, Newport Pkway, Newport PATH, Hamilton Park, and Marine Light Rail. Further analysis reveals that a majority of Citibike stations are located in the densely populated suburbs of New York City overlooking the river, specifically 07030, 07310, and 07302. Interestingly, these suburbs also boast notably high per capita income levels.
+
+### Interactive Features:
+On the 'Map of all stations from 2021-2023,' hover over a station marker to view its name, location, and popularity in terms of customer usage. This also applies for the 'Most popular start stations in the summer of 2021-2023', please hover over a bar to see the station's name and total customer usage over the summer period of 2021-2023. Additionally, you can also filer the marker data by selecting or de-selecting the 'Month, Year of Started Date' filter. 
+
+## Recommendations:
+1. Given the preference for bike rides on Fridays and Saturdays and the popularity of specific starting and ending stations, I recommend optimizing bike distribution (especially classic bikes) in high-demand areas during peak hours to enhance rider satisfaction and alleviate potential shortages in popular locations.
+2. Acknowledging the recent shift in customer preferences towards Thursdays, I recommend introducing targeted incentives or promotions for bike rides on Thursdays to further encourage ridership. This could include discounts, special events, or loyalty programs.
+3. To better understand rider preferences and needs, I recommend conducting customer surveys. These surveys can help gather feedback on factors influencing the choice between classic and electric bikes, satisfaction with station locations, and preferences for ride times. This data can provide additional insights to guide future program improvements.
